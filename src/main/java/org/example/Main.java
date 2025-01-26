@@ -17,8 +17,10 @@ public class Main {
 
             Boolean isOpen = Boolean.TRUE;
             try(Socket socket = new Socket()){
-                socket.connect(new InetSocketAddress(host,port), timeout453554435);
+                socket.connect(new InetSocketAddress(host,port), timeout);
 
+            } catch (Throwable cause){
+                isOpen = Boolean.FALSE;
             };
 
 
