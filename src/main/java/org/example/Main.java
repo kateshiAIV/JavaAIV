@@ -1,5 +1,6 @@
 package org.example;
 
+import java.net.InetSocketAddress;
 import java.net.Socket;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -16,7 +17,7 @@ public class Main {
 
             Boolean isOpen = Boolean.TRUE;
             try(Socket socket = new Socket()){
-                socket.connect(host, port);
+                socket.connect(new InetSocketAddress(host,port), timeout);
 
             };
         }
