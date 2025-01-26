@@ -15,6 +15,8 @@ public class Main {
 
         for (int port = startPort; port <= endPort; port++){
 
+            System.out.println("Trying to reach port " + port);
+
             Boolean isOpen = Boolean.TRUE;
             try(Socket socket = new Socket()){
                 socket.connect(new InetSocketAddress(host,port), timeout);
@@ -23,7 +25,12 @@ public class Main {
                 isOpen = Boolean.FALSE;
             };
 
-
+            if(isOpen){
+                System.out.println("Connected to " + host + ": " + port);
+            }else  {
+                System.out.println("Unable to connect to " + host + ": " + port);
+            }
+            isOpen = Boolean.TRUE;
         }
 
 
