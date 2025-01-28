@@ -39,10 +39,14 @@ public class Main {
 //            }
 //            isOpen = Boolean.TRUE;
 //        }
-    Threads threads = new Threads();
-    threads.start();
-        Threads threads2 = new Threads();
-        threads2.start();
+
+        for  (int i = 0; i < 5; i++) {
+            Threads threads = new Threads();
+            threads.start();
+
+        }
+
+
 
 
     }
